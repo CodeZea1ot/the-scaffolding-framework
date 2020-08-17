@@ -7,25 +7,45 @@ At its core, The Scaffolding Framework is nothing more than a Minecraft datapack
 
 [Join the Discord Community](https://discord.gg/aFscs9y)
 
+
+
+
+
+## How to create a project using the Scaffolding Framework
+
+Here is how you can build your next Minecraft: Java Edition project using the Scaffolding Framework:
+
+- Place `The Scaffolding Framework` datapack within your world's `datapacks` directory (more documentation on this coming soon)
+- Place `The Scaffolding Framework` resource pack within your clients `resource_packs directory` (more documentation on this coming soon)
+- When you publish your project, you must place a link back to this github repository to credit the project (and as a result all of the contributors who made your project possible!).
+
+
+
+
+
 ## How to Contribute
-If you would like to contribute to this project, you can submit a pull request. All contributions must follow the specfic conventions described below. If your contribution is deemed a good fit for the project, you will be listed below as a contributor and your content will be merged into the framework. **Please note that by submitting content to this open-source project you acknowledge that you possess the rights to said content and that you understand that others shall be free to utilize your contributions without requesting your permission to do so and without having to explicitly credit you.**
+If you would like to contribute to this project, you can submit a pull request. All contributions must follow the specfic conventions described below. If your contribution is deemed a good fit for the project, you will be listed below as a contributor and your content will be merged into the framework.
 
-## Project Specific Conventions
+**Please note that by submitting content to this open-source project you acknowledge that you possess the rights to said content and that you understand that others shall be free to utilize your contributions without requesting your permission to do so and without having to explicitly credit you.**
 
-### Datapack Content
 
-#### Namespaces
+
+
+
+## Project Specific Conventions - Datapack Content
+
+### Namespaces
 All namespaces must begin with `tsf_` and describe the modular content as concisely as is possible while still remaining human-readable. For example, if you are creating a module that provides the user with a way to use right-click detection `tsf_r_click` is a better namespace than `tsf_rcdetect`, `tsf_right_click_detection`, or `tsf_rcd`.
 
-#### Scoreboard Objectives
+### Scoreboard Objectives
 
-**Objective Names**
+#### Objective Names
 All scoreboard objective names must begin with `tsf_` and describe the purpose of the objective as best as possible with the remaining 12 characters. Camel casing is encouraged for scoreboard objective names. *The name you select must also be unique within the Scaffolding Framework*. It is your responsibility to make sure that your selected objective name is not currently in use within another module.
 
 For example, if `tsf_rClickCOAS` was not currently in use as an objective name, an objective that keeps track of when a player right-clicks while holding a `minecraft:carrot_on_a_stick` could be declared as follows:
-Example: `/scoreboard objectives add tsf_rClickCOAS minecraft.used:minecraft.carrot_on_a_stick`
+`/scoreboard objectives add tsf_rClickCOAS minecraft.used:minecraft.carrot_on_a_stick`
 
-**Adding and Removing Objectives**
+#### Adding and Removing Objectives
 All modules must include the following functions: `add_objectives.mcfunction` and `remove_objectives.mcfunction`.
 
 These functions must be located in the following path: `The Scaffolding Framework DP/data/<module_namespace>/functions/scripts/`
@@ -34,7 +54,7 @@ These functions must be located in the following path: `The Scaffolding Framewor
 
 `remove_objectives.mcfunction` does not need to be called within your module, but must be included. It should remove the objectives defined in your `add_objectives.mcfunction`.
 
-#### CustomModelData
+### CustomModelData
 If your contribution uses `CustomModelData` you must assign a value that follows this format: `1-aaaa-bb-cccccc`.
 
 Here is how the format breaks down (see the final example below after reading this break down):
@@ -49,15 +69,10 @@ Here is how the format breaks down (see the final example below after reading th
 
 Final Example: The value for the 10th item model submitted by contributor `2854` would be `1285401000010`. Here it is with hyphens: `1-2854-01-000010`
 
-### Resource Pack Content
+## Project Specific Conventions - Resource Pack Content
 
 **CustomModelData**
 See above
 
-## How to create a project using the Scaffolding Framework
-
-Here is how you can build your next Minecraft: Java Edition project using the Scaffolding Framework:
-
-- Place `The Scaffolding Framework` datapack within your world's `datapacks` directory (more documentation on this coming soon)
-- Place `The Scaffolding Framework` resource pack within your clients `resource_packs directory` (more documentation on this coming soon)
-- When you publish your project, you must place a link back to this github repository to credit the project (and as a result all of the contributors who made your project possible!).
+## Contributors
+- [Code_Zealot](https://codezealot.com) | `contributor_id`: `0001`
