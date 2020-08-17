@@ -17,6 +17,23 @@ If you would like to contribute to this project, you can submit a pull request. 
 #### Namespaces
 All namespaces must begin with `tsf_` and describe the modular content as concisely as is possible while still remaining human-readable. For example, if you are creating a module that provides the user with a way to use right-click detection `tsf_r_click` is a better namespace than `tsf_rcdetect`, `tsf_right_click_detection`, or `tsf_rcd`.
 
+#### Scoreboard Objectives
+
+**Objective Names**
+All scoreboard objective names must begin with `tsf_` and describe the purpose of the objective as best as possible with the remaining 12 characters. Camel casing is encouraged for scoreboard objective names. *The name you select must also be unique within the Scaffolding Framework*. It is your responsibility to make sure that your selected objective name is not currently in use within another module.
+
+For example, if `tsf_rClickCOAS` was not currently in use as an objective name, an objective that keeps track of when a player right-clicks while holding a `minecraft:carrot_on_a_stick` could be declared as follows:
+Example: `/scoreboard objectives add tsf_rClickCOAS minecraft.used:minecraft.carrot_on_a_stick`
+
+**Adding and Removing Objectives**
+All modules must include the following functions: `add_objectives.mcfunction` and `remove_objectives.mcfunction`.
+
+These functions must be located in the following path: `The Scaffolding Framework DP/data/<module_namespace>/functions/scripts/`
+
+`add_objectives.mcfunction` must be called only once and within your module's `init.mcfunction` (see below)
+
+`remove_objectives.mcfunction` does not need to be called within your module, but must be included. It should remove the objectives defined in your `add_objectives.mcfunction`.
+
 #### CustomModelData
 If your contribution uses `CustomModelData` you must assign a value that follows this format: `1-aaaa-bb-cccccc`.
 
@@ -30,7 +47,7 @@ Here is how the format breaks down (see the final example below after reading th
 - `cccccc`: An incrementing content specific id.
 	- This id should increment as you add content to categories. For example, your first item, block, and mob would all have the id of `000001`. This means you can contribute up to `999999` models for each content category!
 
-Final Example: The `CustomModelData` value for the 10th item submitted by contributor `2854` would be `1285401000010`. Here it is with hyphens: `1-2854-01-000010`
+Final Example: The value for the 10th item model submitted by contributor `2854` would be `1285401000010`. Here it is with hyphens: `1-2854-01-000010`
 
 ### Resource Pack Content
 
