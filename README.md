@@ -16,7 +16,7 @@ At its core, The Scaffolding Framework is nothing more than a Minecraft datapack
 Here is how you can build your next Minecraft: Java Edition project using the Scaffolding Framework:
 
 - Place `The Scaffolding Framework DP` within your world's `datapacks` directory (more documentation on this coming soon)
-- Place `The Scaffolding Framework RP` within your clients `resource_packs directory` (more documentation on this coming soon)
+- Place `The Scaffolding Framework RP` within your `.minecraft/resourcepacks` (more documentation on this coming soon)
 - When you publish your project, you must place a link back to this github repository to credit the project (and as a result all of the contributors who made your project possible!).
 
 
