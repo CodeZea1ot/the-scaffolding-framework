@@ -117,7 +117,10 @@ Every module that is included within the Scaffolding Framework is initialized us
 #                                                                 #
 ###################################################################
 
+#The module initialization objective is created
 scoreboard objectives add tsf_RClick dummy
+
+#Init module only once
 execute unless score $init tsf_RClick matches 1 run function tsf_r_click:scripts/init
 
 
