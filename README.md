@@ -26,6 +26,8 @@ All modules that belong to the Scaffolding Framework are enabled by invoking the
 
 To disable a module, you can remove or comment out it's `run.mcfunction` file. Consider this example, which invokes the `tsf_r_click` module and also calls it's `reset.mcfunction` file at the end of the loop. The `reset.mcfunction` file should also be located in the same path as `run.mcfunction`
 
+
+**The Scaffolding Framework BP/data/scaffolding/functions/main.mcfunction**
 ```mcfunction
 ###################################################################
 #                                                                 #
@@ -56,8 +58,6 @@ function tsf_r_click:run
 #If a module requires a reset function, call it here at the end of the main loop
 function tsf_r_click:reset
 ``` 
-
-
 
 
 ## How to Contribute
@@ -92,6 +92,43 @@ These functions must be located in the following path: `The Scaffolding Framewor
 `add_objectives.mcfunction` must be called only once and within your module's `init.mcfunction` (see below)
 
 `remove_objectives.mcfunction` does not need to be called within your module, but must be included. It should remove the objectives defined in your `add_objectives.mcfunction`.
+
+
+### Initializing your module
+Every module that is included within the Scaffolding Framework is initialized using a `/scoreboard` objective that is given a name as close to it's namespace as possible. This objective is the only objective within a module that may be added to the scoreboard outside of it's `add_objectives.mcfunction` (see above). Once the objective is added, an immediate test is made using `/execute unless...` to see if the `init.mcfunction` file has been invoked. This means the `init.mcfunction` file will only be called once. Consider this example taken from the `run.mcfunction` file of the `tsf_r_click` module.
+
+**The Scaffolding Framework DP/data/tsf_r_click/functions/run.mcfunction**
+```mcfunction
+###################################################################
+#                                                                 #
+# This project was generated using a tool created by Code_Zealot  #
+#                                                                 #
+#     Website: https://codezealot.com                             #
+#     Channel: https://youtube.com/CodeZealot                     #
+#     Twitter: @CodeZealotTuts                                    #
+#                                                                 #
+# --------------------------------------------------------------- #
+#                         DATAPACK INFO                           #
+# --------------------------------------------------------------- #
+#                                                                 #
+#     Author: Code_Zealot                                         #
+#     URL: Listed Above                                           #
+#                                                                 #
+###################################################################
+
+scoreboard objectives add tsf_RClick dummy
+execute unless score $init tsf_RClick matches 1 run function tsf_r_click:scripts/init
+
+
+#The rest of your module's function calls here...
+
+
+
+
+```
+
+
+
 
 ### CustomModelData
 If your contribution uses `CustomModelData` you must assign a value that follows this format: `1-aaaa-bb-cccccc`.
