@@ -20,3 +20,5 @@
 function tsf_r_click:reload
 function tsf_custom_weapons:reload
 function tsf_custom_mobs:reload
+function tsf_economy:reload
+function tsf_banks:reload

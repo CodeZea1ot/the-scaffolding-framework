@@ -15,19 +15,12 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
+#The module initialization objective is created
+scoreboard objectives add tsf_Economy dummy
 
-#Invoke Modules
-function tsf_r_click:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-function tsf_economy:run
-function tsf_banks:run
-
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
+#Init module only once
+execute unless score $init tsf_Economy matches 1 run function tsf_economy:scripts/init
 
 
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
+#The rest of your module's function calls here...
+scoreboard players add @a tsf_currency 0

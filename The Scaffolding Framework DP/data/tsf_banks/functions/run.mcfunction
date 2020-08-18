@@ -15,19 +15,17 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
+#The module initialization objective is created
+scoreboard objectives add tsf_Banks dummy
 
-#Invoke Modules
-function tsf_r_click:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-function tsf_economy:run
-function tsf_banks:run
-
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
+#Init module only once
+execute unless score $init tsf_Banks matches 1 run function tsf_banks:scripts/init
 
 
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
+#The rest of your module's function calls here...
+
+
+function tsf_banks/settings/location_particles
+
+execute as @a at @s if entity @e[tag=tsf_banks_withdraw,distance=..2] run function tsf_banks:withdraw_currency/withdraw_location
+execute as @a at @s if entity @e[tag=tsf_banks_deposit,distance=..2] run function tsf_banks:deposit_currency/deposit_location
