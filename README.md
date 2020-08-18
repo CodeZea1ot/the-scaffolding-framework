@@ -17,8 +17,45 @@ Here is how you can build your next Minecraft: Java Edition project using the Sc
 
 - Place `The Scaffolding Framework DP` within your world's `datapacks` directory (more documentation on this coming soon)
 - Place `The Scaffolding Framework RP` within your `.minecraft/resourcepacks` (more documentation on this coming soon)
+- Choose which modules you would like to use and either disable or completely remove the remaining modules (a program created later so you can just choose what you which modules to include in your particular build).
 - When you publish your project, you must place a link back to this github repository to credit the project (and as a result all of the contributors who made your project possible!).
 
+
+## How to Enable/Disable Modules
+All modules that belong to the Scaffolding Framework are enabled by invoking their `run.mcfunction` file from within the `main.mcfunction` file that belongs to the `scaffolding` namespace. A module's `run.mcfunction` file must be located in `The Scaffolding Framework DP/data/<namespace>/functions/`.
+
+To disable a module, you can remove or comment out it's `run.mcfunction` file. Consider this example, which invokes the `tsf_r_click` module and also calls it's `reset.mcfunction` file at the end of the loop. The `reset.mcfunction` file should also be located in the same path as `run.mcfunction`
+
+```mcfunction
+###################################################################
+#                                                                 #
+# This project was generated using a tool created by Code_Zealot  #
+#                                                                 #
+#     Website: https://codezealot.com                             #
+#     Channel: https://youtube.com/CodeZealot                     #
+#     Twitter: @CodeZealotTuts                                    #
+#                                                                 #
+# --------------------------------------------------------------- #
+#                         DATAPACK INFO                           #
+# --------------------------------------------------------------- #
+#                                                                 #
+#     Author: Code_Zealot                                         #
+#     URL: Listed Above                                           #
+#                                                                 #
+###################################################################
+
+#Load modules by calling their run.mcfunction file
+
+#Invoke Modules
+function cz-r-click:run
+
+#Other modules can be called here
+
+
+
+#If a module requires a reset function, call it here at the end of the main loop
+function cz-r-click:reset
+``` 
 
 
 
@@ -43,6 +80,8 @@ All namespaces must begin with `tsf_` and describe the modular content as concis
 All scoreboard objective names must begin with `tsf_` and describe the purpose of the objective as best as possible with the remaining 12 characters. Camel casing is encouraged for scoreboard objective names. *The name you select must also be unique within the Scaffolding Framework*. It is your responsibility to make sure that your selected objective name is not currently in use within another module.
 
 For example, if `tsf_rClickCOAS` was not currently in use as an objective name, an objective that keeps track of when a player right-clicks while holding a `minecraft:carrot_on_a_stick` could be declared as follows:
+
+
 `/scoreboard objectives add tsf_rClickCOAS minecraft.used:minecraft.carrot_on_a_stick`
 
 #### Adding and Removing Objectives
@@ -73,6 +112,7 @@ Final Example: The value for the 10th item model submitted by contributor `2854`
 
 **CustomModelData**
 See above
+
 
 ## Contributors
 - [Code_Zealot](https://codezealot.com) | `contributor_id`: `0001`
