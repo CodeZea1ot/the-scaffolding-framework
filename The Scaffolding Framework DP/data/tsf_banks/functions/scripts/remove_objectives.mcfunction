@@ -19,3 +19,4 @@
 scoreboard objectives remove tsf_Banks
 
 #Remove all other objectives created in add_objectives.mcfunction
+scoreboard objectives remove tsf_BankPartcles

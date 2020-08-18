@@ -25,7 +25,7 @@ execute unless score $init tsf_Banks matches 1 run function tsf_banks:scripts/in
 #The rest of your module's function calls here...
 
 
-function tsf_banks/settings/location_particles
+function tsf_banks:settings/location_particles
 
 execute as @a at @s if entity @e[tag=tsf_banks_withdraw,distance=..2] run function tsf_banks:withdraw_currency/withdraw_location
 execute as @a at @s if entity @e[tag=tsf_banks_deposit,distance=..2] run function tsf_banks:deposit_currency/deposit_location

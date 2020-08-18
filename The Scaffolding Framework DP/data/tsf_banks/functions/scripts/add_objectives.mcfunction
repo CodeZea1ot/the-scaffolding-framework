@@ -14,3 +14,5 @@
 #     URL: Listed Above                                           #
 #                                                                 #
 ###################################################################
+
+scoreboard objectives add tsf_BankPartcles dummy
