@@ -47,14 +47,14 @@ To disable a module, you can remove or comment out it's `run.mcfunction` file. C
 #Load modules by calling their run.mcfunction file
 
 #Invoke Modules
-function cz-r-click:run
+function tsf_r_click:run
 
 #Other modules can be called here
 
 
 
 #If a module requires a reset function, call it here at the end of the main loop
-function cz-r-click:reset
+function tsf_r_click:reset
 ``` 
 
 
