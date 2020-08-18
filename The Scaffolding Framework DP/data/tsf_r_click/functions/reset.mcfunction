@@ -16,3 +16,4 @@
 ###################################################################
 
 scoreboard players set @a tsf_rClickCOAS 0
+scoreboard players set @a tsf_rClickWFOAS 0

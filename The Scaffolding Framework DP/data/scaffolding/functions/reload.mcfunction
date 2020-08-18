@@ -14,3 +14,7 @@
 #     URL: Listed Above                                           #
 #                                                                 #
 ###################################################################
+
+#If a module has a reload.mcfunction file, invoke it here
+
+function tsf_r_click:reload

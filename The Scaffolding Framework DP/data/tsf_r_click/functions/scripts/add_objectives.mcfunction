@@ -16,3 +16,4 @@
 ###################################################################
 
 scoreboard objectives add tsf_rClickCOAS minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add tsf_rClickWFOAS minecraft.used:minecraft.warped_fungus_on_a_stick
