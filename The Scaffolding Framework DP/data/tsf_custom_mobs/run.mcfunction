@@ -15,17 +15,11 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
+#The module initialization objective is created
+scoreboard objectives add tsf_CustomMobs dummy
 
-#Invoke Modules
-function tsf_r_click:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
+#Init module only once
+execute unless score $init tsf_CustomMobs matches 1 run function tsf_custom_mobs:scripts/init
 
 
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
+#The rest of your module's function calls here...

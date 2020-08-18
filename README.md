@@ -131,6 +131,7 @@ execute unless score $init tsf_RClick matches 1 run function tsf_r_click:scripts
 
 ```
 
+To complete the initialization of your module. Include the following 
 
 
 
