@@ -49,8 +49,8 @@ To disable a module, you can remove or comment out it's `run.mcfunction` file. C
 #Invoke Modules
 function tsf_r_click:run
 
-#Other modules can be called here
-
+#Other modules can be enabled or disabled here. Consider the importance of execution order. A module using tsf_r_click should be invoked after tsf_r_click, etc...
+#tsf_some_module:run
 
 
 #If a module requires a reset function, call it here at the end of the main loop
