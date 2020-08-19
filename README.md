@@ -8,7 +8,8 @@ At its core, The Scaffolding Framework is nothing more than a Minecraft datapack
 [Join the Discord Community](https://discord.gg/aFscs9y)
 
 
-
+## Isues / feature requests
+If you want to request a new module or feature for a module OR you have found a bug, please open a issue [here](/issues)
 
 
 ## How to create a project using the Scaffolding Framework
@@ -63,7 +64,6 @@ function tsf_r_click:reset
 
 ## How to Contribute
 If you would like to contribute to this project, Please read [this document](CONTRIBUTING.md).
-
 
 
 ## Contributors
