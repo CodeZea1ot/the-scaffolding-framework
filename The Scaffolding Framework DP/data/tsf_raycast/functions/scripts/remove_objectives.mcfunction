@@ -15,11 +15,7 @@
 #                                                                 #
 ###################################################################
 
-#If a module has a reload.mcfunction file, invoke it here
+#Remove the module initilization objective that was added in run.mcfunction
+scoreboard objectives remove tsf_Raycast
 
-function tsf_r_click:reload
-function tsf_raycast:reload
-function tsf_custom_weapons:reload
-function tsf_custom_mobs:reload
-function tsf_economy:reload
-function tsf_banks:reload
+#Remove all other objectives created in add_objectives.mcfunction

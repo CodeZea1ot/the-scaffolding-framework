@@ -15,11 +15,13 @@
 #                                                                 #
 ###################################################################
 
-#If a module has a reload.mcfunction file, invoke it here
 
-function tsf_r_click:reload
-function tsf_raycast:reload
-function tsf_custom_weapons:reload
-function tsf_custom_mobs:reload
-function tsf_economy:reload
-function tsf_banks:reload
+
+#Add the module's scoreboard objectives
+function tsf_raycast:scripts/add_objectives
+
+#Optional init confirmation message
+tellraw @a [{"text":"Ratcast Module Initialized","color":"yellow"}]
+
+#Set the initialization objective value to 1, which ensures this function is only called once
+scoreboard players set $init tsf_Raycast 1

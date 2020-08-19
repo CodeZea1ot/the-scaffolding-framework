@@ -19,6 +19,7 @@
 
 #Invoke Modules
 function tsf_r_click:run
+function tsf_raycast:run
 function tsf_custom_weapons:run
 function tsf_custom_mobs:run
 function tsf_economy:run
@@ -31,3 +32,4 @@ function tsf_banks:run
 
 #If a module requires a reset function, call it here at the end of the main loop
 function tsf_r_click:reset
+function tsf_raycast:reset

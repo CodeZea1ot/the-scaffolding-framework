@@ -1,0 +1,1 @@
+give @p warped_fungus_on_a_stick{tsf_raycast_example:1b,tsf_raycast:1b} 1

@@ -15,11 +15,19 @@
 #                                                                 #
 ###################################################################
 
-#If a module has a reload.mcfunction file, invoke it here
+#The module initialization objective is created
+scoreboard objectives add tsf_Raycast dummy
 
-function tsf_r_click:reload
-function tsf_raycast:reload
-function tsf_custom_weapons:reload
-function tsf_custom_mobs:reload
-function tsf_economy:reload
-function tsf_banks:reload
+#Init module only once
+execute unless score $init tsf_Raycast matches 1 run function tsf_raycast:scripts/init
+
+
+#The rest of your module's function calls here...
+
+
+#Optional: `tsf_raycast:1b` tag marks the player as raycasting to ensure they are not hit by their own ray. Removed in reset.mcfunction
+tag @a[scores={tsf_rClickCOAS=1..},nbt={SelectedItem:{tag:{tsf_raycast:1b}}}] add tsf_raycasting
+tag @a[scores={tsf_rClickWFOAS=1..},nbt={SelectedItem:{tag:{tsf_raycast:1b}}}] add tsf_raycasting
+
+#ray specific `tsf_raycast_DEFINITION_NAME_HERE: 1b` tag specifies which ray to invoke
+execute as @a[scores={tsf_rClickWFOAS=1..},nbt={SelectedItem:{tag:{tsf_raycast_example:1b}}}] at @s positioned ~ ~1.5 ~ positioned ^ ^ ^1 if block ~ ~ ~ air run function tsf_raycast:ray_definitions/example

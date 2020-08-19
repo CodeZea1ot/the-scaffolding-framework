@@ -15,11 +15,6 @@
 #                                                                 #
 ###################################################################
 
-#If a module has a reload.mcfunction file, invoke it here
+#Optional reload message
+tellraw @a [{"text":"Raycast Module Enabled","color":"yellow"}]
 
-function tsf_r_click:reload
-function tsf_raycast:reload
-function tsf_custom_weapons:reload
-function tsf_custom_mobs:reload
-function tsf_economy:reload
-function tsf_banks:reload
