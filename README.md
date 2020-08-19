@@ -158,3 +158,4 @@ See above
 
 ## Contributors
 - [Code_Zealot](https://codezealot.com) | `contributor_id`: `0001`
+- [Edaz](https://edazpotato.github.io) | `contributor_id`: `6969`
