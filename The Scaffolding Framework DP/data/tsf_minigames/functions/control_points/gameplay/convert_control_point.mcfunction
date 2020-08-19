@@ -15,22 +15,14 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
+#convert neutral notification
+execute as @e[tag=red_control_point,scores={tsf_MGCtrlPntTmr=0}] at @s run title @a[distance=..6,tag=tsf_MGCtrlPntRed] title {"text":"Control Point Lost!","color":"red"}
+execute as @e[tag=blue_control_point,scores={tsf_MGCtrlPntTmr=0}] at @s run title @a[distance=..6,tag=tsf_MGCtrlPntBlue] title {"text":"Control Point Lost!","color":"red"}
 
-#Invoke Modules
-function tsf_r_click:run
-function tsf_raycast:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-function tsf_economy:run
-function tsf_banks:run
-function tsf_minigames:run
+#convert marker to neutral
+execute as @e[tag=red_control_point,scores={tsf_MGCtrlPntTmr=0}] at @s run function tsf_minigames:control_points/gameplay/make_neutral
+execute as @e[tag=blue_control_point,scores={tsf_MGCtrlPntTmr=0}] at @s run function tsf_minigames:control_points/gameplay/make_neutral
 
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
-
-
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
-function tsf_raycast:reset
+#convert marker to faction
+execute as @e[tag=unclaimed_control_point,scores={tsf_MGCtrlPntTmr=0}] at @s if entity @a[tag=tsf_MGCtrlPntBlue,distance=..6] run function tsf_minigames:control_points/gameplay/make_blue
+execute as @e[tag=unclaimed_control_point,scores={tsf_MGCtrlPntTmr=0}] at @s if entity @a[tag=tsf_MGCtrlPntRed,distance=..6] run function tsf_minigames:control_points/gameplay/make_red

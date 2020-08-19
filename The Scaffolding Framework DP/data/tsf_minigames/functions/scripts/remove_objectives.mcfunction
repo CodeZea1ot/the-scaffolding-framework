@@ -15,22 +15,15 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
+#Remove the module initilization objective that was added in run.mcfunction
+scoreboard objectives remove tsf_Minigames
 
-#Invoke Modules
-function tsf_r_click:run
-function tsf_raycast:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-function tsf_economy:run
-function tsf_banks:run
-function tsf_minigames:run
+#Remove all other objectives created in add_objectives.mcfunction
 
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
+#control_points objectives
+##Capture Timer
+scoreboard objectives remove tsf_MGCtrlPntTmr
 
-
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
-function tsf_raycast:reset
+##Team Points
+scoreboard objectives remove tsf_MGCtrlPnt
+scoreboard objectives remove tsf_MGCtrlPnt_f

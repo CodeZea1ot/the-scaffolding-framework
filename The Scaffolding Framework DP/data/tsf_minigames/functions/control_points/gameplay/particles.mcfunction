@@ -15,22 +15,7 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
-
-#Invoke Modules
-function tsf_r_click:run
-function tsf_raycast:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-function tsf_economy:run
-function tsf_banks:run
-function tsf_minigames:run
-
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
-
-
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
-function tsf_raycast:reset
+execute as @e[tag=control_point] at @s run tp @s ~ ~ ~ ~10 ~
+execute as @e[tag=blue_control_point] at @s if entity @a[tag=red,distance=..6] run particle minecraft:crit ^ ^.5 ^1
+execute as @e[tag=red_control_point] at @s if entity @a[tag=blue,distance=..6] run particle minecraft:crit ^ ^.5 ^1
+execute as @e[tag=unclaimed_control_point] at @s if entity @a[distance=..6] run particle minecraft:composter ^ ^.5 ^1

@@ -15,22 +15,14 @@
 #                                                                 #
 ###################################################################
 
-#Load modules by calling their run.mcfunction file
+#The module initialization objective is created
+scoreboard objectives add tsf_Minigames dummy
 
-#Invoke Modules
-function tsf_r_click:run
-function tsf_raycast:run
-function tsf_custom_weapons:run
-function tsf_custom_mobs:run
-function tsf_economy:run
-function tsf_banks:run
-function tsf_minigames:run
-
-#Other modules can be enabled or disabled here. Consider the importance of execution order.
-#A module hooking into tsf_r_click should be invoked after tsf_r_click, etc...
-#tsf_some_module:run
+#Init module only once
+execute unless score $init tsf_Minigames matches 1 run function tsf_minigames:scripts/init
 
 
-#If a module requires a reset function, call it here at the end of the main loop
-function tsf_r_click:reset
-function tsf_raycast:reset
+#The rest of your module's function calls here...
+
+#Enable MiniGames
+function tsf_minigames:control_points/run

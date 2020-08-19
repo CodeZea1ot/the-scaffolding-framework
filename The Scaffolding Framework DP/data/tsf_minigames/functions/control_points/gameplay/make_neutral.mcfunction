@@ -1,0 +1,2 @@
+data merge entity @s {CustomNameVisible:1b,Tags:["unclaimed_control_point", "control_point"],CustomName:'{"text":"Unclaimed Control Point","color":"white"}'}
+scoreboard players set @s tsf_MGCtrlPntTmr 200
