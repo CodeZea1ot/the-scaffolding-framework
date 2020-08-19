@@ -9,7 +9,7 @@ At its core, The Scaffolding Framework is nothing more than a Minecraft datapack
 
 
 ## Isues / feature requests
-If you want to request a new module or feature for a module OR you have found a bug, please open a issue [here](/issues)
+If you want to request a new module or feature for a module OR you have found a bug, please open a issue [here](issues)
 
 
 ## How to create a project using the Scaffolding Framework
